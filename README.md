@@ -246,13 +246,13 @@ SCRM-DETR/
 
 ## Model Zoo
 
-Pretrained checkpoints will be released after the paper-side release package is finalized.
+The following EMA checkpoints correspond to the reported results. Download them from the [v0.1.0 release](https://github.com/tk15579314-ux/SCRM-DETR/releases/tag/v0.1.0).
 
 | Model | Dataset | AP | AP75 | Checkpoint |
 |---|---|---:|---:|---|
-| SCRM-DETR-R50VD | HiXray | 50.64 | 55.29 | To be released |
-| SCRM-DETR-R34VD | HiXray | 50.46 | 55.73 | To be released |
-| SCRM-DETR-R50VD | PIDRay | 67.16 | 73.15 | To be released |
+| SCRM-DETR-R50VD | HiXray | 50.64 | 55.29 | [Download](https://github.com/tk15579314-ux/SCRM-DETR/releases/download/v0.1.0/scrm_detr_r50vd_hixray.pth) |
+| SCRM-DETR-R34VD | HiXray | 50.46 | 55.73 | [Download](https://github.com/tk15579314-ux/SCRM-DETR/releases/download/v0.1.0/scrm_detr_r34vd_hixray.pth) |
+| SCRM-DETR-R50VD | PIDRay | 67.16 | 73.15 | [Download](https://github.com/tk15579314-ux/SCRM-DETR/releases/download/v0.1.0/scrm_detr_r50vd_pidray.pth) |
 
 ## Acknowledgements
 
