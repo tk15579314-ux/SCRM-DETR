@@ -1,0 +1,27 @@
+__include__: [
+  './rtdetr_r50vd_6x_hixray.yml',
+]
+
+num_classes: 12
+remap_mscoco_category: False
+
+epoches: 72
+log_step: 100
+output_dir: ./output/rtdetr_r50vd_6x_pidray
+
+PResNet:
+  pretrained: False
+
+train_dataloader:
+  dataset:
+    img_folder: ./dataset/pidray_yolo/images/train/
+    ann_file: ./dataset/pidray/annotations/instances_train.json
+  batch_size: 8
+  num_workers: 8
+
+val_dataloader:
+  dataset:
+    img_folder: ./dataset/pidray_yolo/images/val/
+    ann_file: ./dataset/pidray/annotations/instances_val.json
+  batch_size: 8
+  num_workers: 8

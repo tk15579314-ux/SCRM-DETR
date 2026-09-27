@@ -1,0 +1,8 @@
+__include__:
+  - './rtdetr_r50vd_6x_pidray_sc_xlce_soft.yml'
+
+output_dir: ./output/rtdetr_r50vd_6x_pidray_scrm_final_b030_a050
+
+HybridEncoder:
+  sc_soft_base: 0.3
+  sc_enhance_alpha: 0.5

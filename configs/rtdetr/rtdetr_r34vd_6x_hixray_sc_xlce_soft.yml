@@ -1,0 +1,55 @@
+__include__: [
+  '../dataset/hixray_detection.yml',
+  '../runtime.yml',
+  './include/dataloader.yml',
+  './include/optimizer.yml',
+  './include/rtdetr_r50vd.yml',
+]
+
+output_dir: ./output/rtdetr_r34vd_6x_hixray_sc_xlce_soft
+
+PResNet:
+  depth: 34
+  freeze_at: -1
+  freeze_norm: False
+  pretrained: True
+
+HybridEncoder:
+  in_channels: [128, 256, 512]
+  hidden_dim: 256
+  expansion: 0.5
+  use_xray_enhance: True
+  xray_enhance_type: sc_xlce_soft
+  use_scale_consistency: True
+
+RTDETRTransformer:
+  eval_idx: -1
+  num_decoder_layers: 4
+  num_denoising: 100
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?=.*norm|bn).*$'
+      weight_decay: 0.
+      lr: 0.00001
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.00001
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*norm|bn|bias).*$'
+      weight_decay: 0.
+  lr: 0.0001
+  betas: [0.9, 0.999]
+  weight_decay: 0.0001
+
+# Speed-up setting for R34VD backbone experiments
+# Keep identical for baseline and SC-XLCE-Soft for fair comparison.
+train_dataloader:
+  batch_size: 16
+  num_workers: 4
+
+val_dataloader:
+  batch_size: 16
+  num_workers: 4
