@@ -45,6 +45,13 @@ G_s = 0.5 + 0.5G_c.
 
 SCRM is applied to the P3 and P4 feature levels of the RT-DETR hybrid encoder.
 
+## Framework
+
+<p align="center">
+  <img src="assets/Fig2.png" width="100%">
+</p>
+
+
 ## Highlights
 
 - Local enhancement and reliability verification are explicitly separated.
